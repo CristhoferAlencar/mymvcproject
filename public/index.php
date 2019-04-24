@@ -1,3 +1,14 @@
 <?php
 
-echo 'Requested URL = "' . $_SERVER['QUERY_STRING'] . '"' ;
+/**
+ * Front Controller
+ */
+
+ /**
+  * Routing
+  */
+require '../Core/Router.php';
+
+$router = new Router();
+
+echo get_class($router);
