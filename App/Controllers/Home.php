@@ -1,8 +1,15 @@
 <?php
 namespace App\Controllers;
 
-class Home{
+/**
+ * Home controller
+ */
+class Home extends \Core\Controller{
 
+     /**
+     * Show the index page
+     * @return void
+     */
     public function index(){
         echo "Hello from the index action in the Home Controller!";
     }
