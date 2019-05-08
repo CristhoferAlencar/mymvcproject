@@ -9,16 +9,9 @@
   */
 require '../vendor/autoload.php';
 
-/**
- * Twig
- */
-Twig_Autoloader::register();
-
  /**
   * Routing
   */
-//require '../Core/Router.php';
-
 $router = new Core\Router();
 
 // Add the routes
