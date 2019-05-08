@@ -1,0 +1,89 @@
+[33mcommit 048c956e53a72c732444b65c6bba23870b0aa9f6[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: CristhoferAlencar <cristhofer-alencar@hotmail.com>
+Date:   Fri Apr 26 08:21:07 2019 -0300
+
+    Added route namespace option
+
+[33mcommit 883182303cc7bdbf28d792163f41ff26da59b849[m
+Author: CristhoferAlencar <cristhofer-alencar@hotmail.com>
+Date:   Fri Apr 26 08:12:05 2019 -0300
+
+    Fixed security bug with the action filters
+
+[33mcommit 5de68a276295ec7f59e91d4cbe0d595833b36675[m
+Author: CristhoferAlencar <cristhofer-alencar@hotmail.com>
+Date:   Fri Apr 26 08:11:15 2019 -0300
+
+    Added action filters to the controllers
+
+[33mcommit 2dc0e31c90033ab27243d1a714e2897c76e6aac2[m
+Author: CristhoferAlencar <cristhofer-alencar@hotmail.com>
+Date:   Fri Apr 26 07:52:22 2019 -0300
+
+    Passing route parameters from the route to all controllers
+
+[33mcommit 1d10ab10bf34a5d4bbae1d648c09009534f18f81[m
+Author: CristhoferAlencar <cristhofer-alencar@hotmail.com>
+Date:   Fri Apr 26 07:42:17 2019 -0300
+
+    Added function to remove query string variables from URL
+
+[33mcommit d089de017de02c080b3d3836b6c9d4f32ac47ab9[m
+Author: CristhoferAlencar <cristhofer-alencar@hotmail.com>
+Date:   Fri Apr 26 07:29:21 2019 -0300
+
+    Created autoload function
+
+[33mcommit a5814203dd0549728d92b2a09ea718307661aa14[m
+Author: CristhoferAlencar <cristhofer-alencar@hotmail.com>
+Date:   Fri Apr 26 07:03:40 2019 -0300
+
+    Created dispatch function in Router file
+
+[33mcommit 3e8ccecfae65e4690aca77940b1257f64a0804e8[m
+Author: CristhoferAlencar <cristhofer-alencar@hotmail.com>
+Date:   Thu Apr 25 22:29:30 2019 -0300
+
+    Added custom variables of any format to thte URL
+
+[33mcommit be9b0d420f46d2ba53ba092c990739b83280d93a[m
+Author: CristhoferAlencar <cristhofer-alencar@hotmail.com>
+Date:   Thu Apr 25 22:06:35 2019 -0300
+
+    Get the controller and action from a URL with variable structure
+
+[33mcommit 74d0b886b096dc8b3901d9aa3c4c528f8c731b55[m
+Author: CristhoferAlencar <cristhofer-alencar@hotmail.com>
+Date:   Wed Apr 24 15:14:37 2019 -0300
+
+    Created basic match function for routing table
+
+[33mcommit 925e22274caa08dda31a4ddb89d14de00b05099d[m
+Author: CristhoferAlencar <cristhofer-alencar@hotmail.com>
+Date:   Wed Apr 24 14:38:39 2019 -0300
+
+    Created routing table
+
+[33mcommit 5221a391d2d424c438cf7f1adb0b554ae0ae94b4[m
+Author: CristhoferAlencar <cristhofer-alencar@hotmail.com>
+Date:   Wed Apr 24 14:14:49 2019 -0300
+
+    Added Router file
+
+[33mcommit 2d5fd4f59a4c5119d07d6675dfe7c7b03bd66ff2[m
+Author: CristhoferAlencar <cristhofer-alencar@hotmail.com>
+Date:   Wed Apr 24 13:58:30 2019 -0300
+
+    Added htaccess file
+
+[33mcommit bdcdb87a4c727348db028c5c4197a2f07cae9cae[m
+Author: Cristhofer Cardoso de Alencar <cristhofer-alencar@hotmail.com>
+Date:   Wed Apr 24 13:50:15 2019 -0300
+
+    Created README file
+
+[33mcommit 2dfdaa1631083b1ebdbf0f477899c2d3331337fb[m
+Author: CristhoferAlencar <cristhofer-alencar@hotmail.com>
+Date:   Wed Apr 24 13:47:44 2019 -0300
+
+    Inicial commit
