@@ -4,10 +4,14 @@
  * Front Controller
  */
 
+ /**
+  * Composer
+  */
+require '../vendor/autoload.php';
+
 /**
  * Twig
  */
-require_once dirname(__DIR__) . '/vendor/Twig/lib/Twig/Autoloader.php';
 Twig_Autoloader::register();
 
  /**
