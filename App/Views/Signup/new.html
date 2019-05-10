@@ -24,10 +24,6 @@
         <label for="inputPassword">Password</label>
         <input type="password" id="inputPassword" name="password" placeholder="Password" require pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" title="Minimum 6 chars, at leats one letter and number" />
     </div>
-    <div>
-        <label for="inputPasswordConfirmation">Repeat password</label>
-        <input type="password" id="inputPasswordConfirmation" name="password_confirmation" placeholder="Repeat password" require />
-    </div>
 
     <button type="submit">Sign up</button>
 </form>
@@ -36,7 +32,15 @@
 
 {% block footer %} 
 
+    <!--Hide/Show Password Puglin-->
+    <script src="/js/hideShowPassword.min.js"></script>
+    
     <script>
+        /**
+         * Add jQuery Validation plugin method for a valid password
+         * 
+         * Valid passwords contain at least one letter and one number
+         */
         $.validator.addMethod('validPassword',
             function(value, element, param) {
                 if(value != ''){
@@ -69,9 +73,6 @@
                         required: true,
                         minlength: 6,
                         validPassword: true,
-                    },
-                    password_confirmation: {
-                        equalTo: '#inputPassword'
                     }
                 },
                 messages: {
@@ -81,6 +82,14 @@
                 }
             });
         });
+
+        /**
+         * Show password toggle button
+         */
+        $('#inputPassword').hideShowPassword({
+            show: false,
+            innerToggle: 'focus'
+         });
     </script>
 
 {% endblock %}
