@@ -1,0 +1,24 @@
+{
+  "name": "mymvcproject",
+  "version": "1.0.0",
+  "description": "Project using MVC Framework and Login system from Udemy couse by Dave Hollingworth",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CristhoferAlencar/mymvcproject.git"
+  },
+  "author": "Cristhofer Alencar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CristhoferAlencar/mymvcproject/issues"
+  },
+  "homepage": "https://github.com/CristhoferAlencar/mymvcproject#readme",
+  "dependencies": {
+    "hideshowpassword": "^2.1.1",
+    "jquery": "^3.4.1",
+    "jquery-validation": "^1.19.0"
+  }
+}

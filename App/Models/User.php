@@ -71,7 +71,7 @@ class User extends \Core\Model{
             $this->errors[] = 'Invalid email';
         }
 
-        if($this->emailExists($this->email)){
+        if(static::emailExists($this->email)){
             $this->errors[] = 'Email already taken';
         }
 
