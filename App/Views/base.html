@@ -8,17 +8,19 @@
 </head>
 
 <body>
-    <nav>
-        {% if is_logged_in %}
+
+    {% if current_user %}
+        Hello {{ current_user.name }}
+
+        <nav>
             <a href="/logout">Logout</a>
             <a href="/items/index">Items</a>
         {% else %}
             <a href="/">Home</a>
             <a href="/signup/new">Sign up</a>
             <a href="/login">Login</a>
-            <a href="/items/index">Items</a>
-        {% endif %}
-    </nav>
+        </nav>    
+    {% endif %}
 
     {% block body %} 
     {% endblock %}

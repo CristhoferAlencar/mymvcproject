@@ -2,12 +2,11 @@
 namespace App\Controllers;
 
 use \Core\View;
-use \App\Authentication as Auth;
 
 /**
  * Items controller (example)
  */
-class Items extends \Core\Controller{
+class Items extends Authenticated{
 
     /**
      * Items index
@@ -15,10 +14,24 @@ class Items extends \Core\Controller{
      * @return void
      */
     public function indexAction(){
-        if(!Auth::isLoggedIn()){
-            $this->redirect('/login');
-        }
-
         View::renderTemplate('Items/index.html');
+    }
+
+    /**
+     * Add a new item
+     *
+     * @return void
+     */
+    public function newAction(){
+        echo "new action";
+    }
+
+    /**
+     * Show an item
+     *
+     * @return void
+     */
+    public function showAction(){
+        echo "show action";
     }
 }

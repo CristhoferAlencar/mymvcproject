@@ -1,6 +1,8 @@
 <?php
 namespace Core;
 
+use \App\Authentication as Auth;
+
 abstract class Controller{
 
     /**
@@ -71,5 +73,19 @@ abstract class Controller{
     public function redirect($url){
         header('Location: http://' . $_SERVER['HTTP_HOST'] . $url, true, 303);
         exit;
+    }
+
+    /**
+     * Requite the user to be logged in before giving access to the requested page.
+     * Remember the requested page for later, then redirect to the login page.
+     *
+     * @return void
+     */
+    public function requireLogin(){
+        if(!Auth::getUser()){
+            Auth::rememberRequestedPage();
+
+            $this->redirect('/login');
+        }
     }
 }

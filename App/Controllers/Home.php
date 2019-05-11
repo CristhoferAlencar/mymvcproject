@@ -1,7 +1,8 @@
 <?php
 namespace App\Controllers;
 
-use Core\View;
+use \Core\View;
+use \App\Authentication as Auth;
 
 /**
  * Home controller
@@ -30,9 +31,6 @@ class Home extends \Core\Controller{
      * @return void
      */
     public function indexAction(){
-        View::renderTemplate('Home/index.html', [
-            'name'    => 'Cristhofer',
-            'colours' => ['red', 'green', 'blue']
-        ]);
+        View::renderTemplate('Home/index.html');
     }
 }
