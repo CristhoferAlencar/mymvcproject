@@ -4,6 +4,8 @@
  * Front Controller
  */
 
+ ini_set('session.cookie_lifetime', '864000'); // 10 days in seconds
+
  /**
   * Composer
   */

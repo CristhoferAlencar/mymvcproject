@@ -2,6 +2,7 @@
 namespace App;
 
 use App\Models\User;
+use App\Models\RememberedLogin;
 
 /**
  * Authentication
@@ -15,10 +16,16 @@ class Authentication{
      *
      * @return void
      */
-    public static function login($user){
+    public static function login($user, $remember_me){
         session_regenerate_id(true);
 
         $_SESSION['user_id'] = $user->id;
+
+        if ($remember_me) {
+            if($user->rememberLogin()){
+                setcookie('remember_me', $user->remember_token, $user->expiry_timestamp, '/');
+            }
+        }
     }
 
     /**
@@ -47,6 +54,8 @@ class Authentication{
 
         // Finally destroy the session
         session_destroy();
+
+        static::forgetLogin();
     }
 
     /**
@@ -77,7 +86,47 @@ class Authentication{
         if(isset($_SESSION['user_id'])){
             return User::findByID($_SESSION['user_id']);
         }else{
-            //return static::loginFromRememberCookie();
+            return static::loginFromRememberCookie();
+        }
+    }
+
+    /**
+     * Login the user from a remembered login cookie
+     *
+     * @return mixed The user model if login cookie found, null otherwise
+     */
+    protected static function loginFromRememberCookie(){
+        $cookie = $_COOKIE['remember_me'] ?? false;
+
+        if($cookie){
+            $remembered_login = RememberedLogin::findByToken($cookie);
+
+            if($remembered_login && !$remembered_login->hasExpired()){
+                $user = $remembered_login->getUser();
+
+                static::login($user, false);
+
+                return $user;
+            }
+        }
+    }
+
+    /**
+     * Forget the remembered login, if present
+     *
+     * @return void
+     */
+    protected static function forgetLogin(){
+        $cookie = $_COOKIE['remember_me'] ?? false;
+
+        if($cookie){
+            $remembered_login = RememberedLogin::findByToken($cookie);
+
+            if($remembered_login){
+                $remembered_login->delete();
+            }
+
+            setcookie('remember_me', '', time() - 3600); // set to expire in the past
         }
     }
 }
