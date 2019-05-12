@@ -16,22 +16,22 @@
     {% endif %}
 
     <form id="formProfile" method="post" action="/profile/update">
-        <div>
+        <div class="form-group">
             <label for="inputName">Name</label>
-            <input id="inputName" name="name" placeholder="Name" value="{{ user.name }}" require />
+            <input id="inputName" class="form-control" name="name" placeholder="Name" value="{{ user.name }}" require />
         </div>
-        <div>
+        <div class="form-group">
             <label for="inputEmail">Email address</label>
-            <input type="email" id="inputEmail" name="email" placeholder="Email address" value="{{ user.email }}" require />
+            <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email address" value="{{ user.email }}" require />
         </div>
-        <div>
+        <div class="form-group">
             <label for="inputPassword">Password</label>
             <input class="form-control" type="password" id="inputPassword" name="password" placeholder="Password" aria-describedy="helpBlock" />
-            <span id="helpBlock" class="help-block">Leave blank to keep current passsword</span>
+            <small id="helpBlock" class="form-text text-muted">Leave blank to keep current passsword</small>
         </div>
 
-        <button type="submit">Save</button>
-        <a href="/profile/show">Cancel</a>
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a href="/profile/show" class="btn btn-danger">Cancel</a>
     </form>
 
 {% endblock %} 
