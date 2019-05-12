@@ -2,7 +2,6 @@
 namespace App\Controllers;
 
 use \Core\View;
-use \App\Authentication as Auth;
 
 /**
  * Home controller
