@@ -1,24 +1,24 @@
 {% extends "base.html" %} 
 
-{% block title %}Sign up{% endblock %} 
+{% block title %}Profile{% endblock %} 
 
 {% block body %}
 
-    <h1>Sign up</h1>
+    <h1>Profile</h1>
 
     {% if user.errors is not empty %}
-        <p>Errors:</p>
-        <ul>
-            {% for error in user.errors %}
-                <li>{{ error }}</li>
-            {% endfor %}
-        </ul>
+    <p>Errors:</p>
+    <ul>
+        {% for error in user.errors %}
+        <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
     {% endif %}
 
-    <form id="formSignup" method="post" action="/signup/create">
+    <form id="formProfile" method="post" action="/profile/update">
         <div>
             <label for="inputName">Name</label>
-            <input id="inputName" name="name" placeholder="Name" autofocus value="{{ user.name }}" require />
+            <input id="inputName" name="name" placeholder="Name" value="{{ user.name }}" require />
         </div>
         <div>
             <label for="inputEmail">Email address</label>
@@ -26,10 +26,12 @@
         </div>
         <div>
             <label for="inputPassword">Password</label>
-            <input type="password" id="inputPassword" name="password" placeholder="Password" require pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" title="Minimum 6 chars, at leats one letter and number" />
+            <input class="form-control" type="password" id="inputPassword" name="password" placeholder="Password" aria-describedy="helpBlock" />
+            <span id="helpBlock" class="help-block">Leave blank to keep current passsword</span>
         </div>
 
-        <button type="submit">Sign up</button>
+        <button type="submit">Save</button>
+        <a href="/profile/show">Cancel</a>
     </form>
 
 {% endblock %} 
@@ -42,19 +44,27 @@
     
     <script>
         $(document).ready(function() {
+            var userId = '{{ user.id }}';
+
             /**
              * Validate the form
              */
-            $('#formSignup').validate({
+            $('#formProfile').validate({
                 rules: {
                     name: 'required',
                     email: {
                         required: true,
                         email: true,
-                        remote: '/account/validate-email'
+                        remote: {
+                            url: '/account/validate-email',
+                            data: {
+                                ignore_id: function(){
+                                    return userId;
+                                }
+                            }
+                        }
                     },
                     password: {
-                        required: true,
                         minlength: 6,
                         validPassword: true,
                     }

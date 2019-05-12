@@ -7,12 +7,12 @@
     <h1>Reset Password</h1>
 
     {% if user.errors is not empty %}
-    <p>Errors:</p>
-    <ul>
-        {% for error in user.errors %}
-        <li>{{ error }}</li>
-        {% endfor %}
-    </ul>
+        <p>Errors:</p>
+        <ul>
+            {% for error in user.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
     {% endif %}
 
     <form id="formPassword" method="post" action="/password/reset-password">
