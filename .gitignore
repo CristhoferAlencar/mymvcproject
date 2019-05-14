@@ -1,5 +1,6 @@
 vendor/
 logs/
+App/Config.php
 node_modules/
 .cache/
 public/dist/*.ttf
