@@ -1,4 +1,5 @@
 vendor/
-App/Config.php
 logs/
 node_modules/
+.cache/
+public/dist/*.ttf
